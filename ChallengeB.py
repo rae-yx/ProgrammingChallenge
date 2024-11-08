@@ -17,7 +17,7 @@ def find_type(value):
 
 with open("programming_challenge.txt", "r") as file:
     for line in file:
-        objects = line.strip().split(',')
+        objects = line.split(',')
 
         if len(objects) == 4:
             alphabetical = objects[0]
