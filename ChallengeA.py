@@ -17,7 +17,18 @@ def generate_integer():
 #Generate random alphanumeric string
 def generate_alphanumeric():
     length = random.randint(5,20)
-    alphanumeric = ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
+    #Make sure there is at least a letter and a number
+    letter = random.choice(string.ascii_letters)
+    digit = random.choice(string.digits)
+
+    #Generate the remaining characters
+    remaining_length = length - 2
+    remaining_chars = ''.join(random.choices(string.ascii_letters + string.digits, k=remaining_length))
+    alphanumeric = letter + digit + remaining_chars
+    #Shuffle the letter and digit
+    alphanumeric = ''.join(random.sample(alphanumeric, len(alphanumeric)))
+    #Add spaces
     spaces_before = ' ' * random.randint(0,10)
     spaces_after = ' ' * random.randint(0,10)
 
