@@ -1,0 +1,10 @@
+version: '3'
+services:
+  challenge-b:
+    image: challenge-b-image
+    build:
+      context: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python ChallengeB.py
