@@ -1,7 +1,10 @@
+#Main function to find the type of object
 def find_type(value):
+    #Check for integer
     if value.isdigit():
         return "Integer"
-    
+    #Check for real number (float)
+    #Try-except is used because float() will raise a ValueError if the value is not a number
     try:
         float_value = float(value)
         if '.' in value:
@@ -10,11 +13,13 @@ def find_type(value):
     except ValueError:
         pass
 
+    #Check for alphanumeric
     if any(char.isdigit() for char in value) and any(char.isdigit() for char in value):
         return "Alphanumeric"
-    
+    #If not any of the above, it is an alphabetical string
     return "Alphabetical String"
 
+#Open file and read line by line
 with open("programming_challenge.txt", "r") as file:
     for line in file:
         objects = line.split(',')
