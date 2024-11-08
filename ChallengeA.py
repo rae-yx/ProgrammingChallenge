@@ -17,6 +17,8 @@ def generate_alphanumeric():
     spaces_before = ' ' * random.randint(0,10)
     spaces_after = ' ' * random.randint(0,10)
 
+    return f"{spaces_before}{alphanumeric}{spaces_after}"
+
 target_file_size = 10 * 1024 * 1024
 
 with open("programming_challenge.txt", "w") as file:

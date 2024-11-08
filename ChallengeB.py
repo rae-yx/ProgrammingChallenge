@@ -14,3 +14,18 @@ def find_type(value):
         return "Alphanumeric"
     
     return "Alphabetical String"
+
+with open("programming_challenge.txt", "r") as file:
+    for line in file:
+        objects = line.strip().split(',')
+
+        if len(objects) == 4:
+            alphabetical = objects[0]
+            real_number = objects[1]
+            integer = objects[2]
+            alphanumeric = objects[3].strip()
+
+            print(f"Object: {alphabetical} Type: {find_type(alphabetical)}")
+            print(f"Object: {real_number} Type: {find_type(real_number)}")
+            print(f"Object: {integer} Type: {find_type(integer)}")
+            print(f"Object: {alphanumeric} Type: {find_type(alphanumeric)}\n")
